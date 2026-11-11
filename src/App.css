@@ -1,0 +1,1212 @@
+
+/* =====================================================
+   APPOINTEASE - COMPLETE PURPLE BLUE GLASSMORPHISM THEME
+   Home, Navbar, Categories, Providers, Auth, Booking,
+   Appointments and Admin Module
+===================================================== */
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  width: 100%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 10% 20%, #9b4de8 0%, transparent 35%),
+    radial-gradient(circle at 90% 15%, #16bde8 0%, transparent 35%),
+    radial-gradient(circle at 70% 90%, #7b35d1 0%, transparent 40%),
+    linear-gradient(135deg, #17134d, #20205f, #063d68);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: Arial, sans-serif;
+}
+
+button {
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+input,
+select,
+textarea {
+  font-size: 14px;
+}
+
+a {
+  color: #79e6ff;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 18px 30px;
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar h2 {
+  margin: 0;
+  font-size: 25px;
+  color: white;
+  letter-spacing: 0.5px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.25);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav-buttons button {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 9px 14px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.nav-buttons button:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.25);
+  color: white;
+  transform: translateY(-1px);
+}
+
+.login-user {
+  margin-left: 12px;
+  padding: 9px 16px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  backdrop-filter: blur(15px);
+}
+
+.logout-button {
+  background: rgba(255, 255, 255, 0.18) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.35) !important;
+  border-radius: 20px !important;
+}
+
+.logout-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+}
+
+/* =========================
+   HOME PAGE
+========================= */
+
+.home {
+  min-height: 90vh;
+  text-align: center;
+  padding: 30px 20px;
+  background: transparent;
+}
+
+.hero {
+  padding: 60px 20px 45px;
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  color: white;
+  margin: 0 0 18px;
+  text-shadow: 0 0 25px rgba(150, 100, 255, 0.5);
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg, #d99cff, #75eaff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* =========================
+   CATEGORIES
+========================= */
+
+.category-title {
+  color: white;
+  margin: 30px 0;
+  font-size: 28px;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.category-container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 220px));
+  justify-content: center;
+  gap: 22px;
+  margin-top: 25px;
+}
+
+.category-card {
+  padding: 30px 20px;
+  border-radius: 18px;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.11);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  background: rgba(255, 255, 255, 0.17);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 15px 40px rgba(120, 80, 220, 0.35);
+}
+
+.category-icon {
+  font-size: 50px;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+}
+
+.category-card h3 {
+  color: white;
+  font-size: 19px;
+  margin: 15px 0 8px;
+}
+
+.category-card p {
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  font-size: 14px;
+}
+
+/* =========================
+   PROVIDERS
+========================= */
+
+.providers-page {
+  text-align: center;
+  padding: 45px 20px;
+  min-height: 80vh;
+  background: transparent;
+}
+
+.providers-page h2 {
+  color: white;
+  font-size: 30px;
+  margin: 0 0 30px;
+}
+
+.provider-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.provider-card {
+  background: rgba(255, 255, 255, 0.11);
+  width: 250px;
+  max-width: 100%;
+  padding: 25px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+
+.provider-card:hover {
+  transform: translateY(-7px);
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.provider-icon {
+  font-size: 50px;
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.3));
+}
+
+.provider-card h3 {
+  color: white;
+}
+
+.provider-card p {
+  color: rgba(255, 255, 255, 0.68);
+}
+
+.provider-card button {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7446e8, #328eea);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  box-shadow: 0 5px 20px rgba(70, 80, 220, 0.3);
+}
+
+.provider-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(70, 100, 240, 0.45);
+}
+
+.back-button {
+  margin-top: 30px;
+  padding: 12px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+/* =========================
+   GENERAL LOGIN AND SIGNUP
+========================= */
+
+.auth-page {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: transparent;
+}
+
+.auth-card {
+  width: 380px;
+  max-width: 100%;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.auth-card h2 {
+  text-align: center;
+  color: white;
+  margin: 0 0 25px;
+  font-size: 27px;
+}
+
+.auth-card label {
+  display: block;
+  margin-top: 15px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+}
+
+.auth-card input,
+.auth-card select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9px;
+  outline: none;
+  font-size: 14px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  transition: 0.3s;
+}
+
+.auth-card input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.auth-card input:focus,
+.auth-card select:focus {
+  border-color: #7bdcff;
+  box-shadow: 0 0 15px rgba(80, 210, 255, 0.25);
+}
+
+.auth-card select {
+  cursor: pointer;
+}
+
+.auth-card select option {
+  background-color: #29205e;
+  color: white;
+}
+
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7145e7, #318fe8);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 7px 20px rgba(70, 70, 220, 0.3);
+}
+
+.auth-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(70, 100, 240, 0.45);
+}
+
+.signup-text {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 20px 0 8px;
+  font-size: 14px;
+}
+
+.secondary-button {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+  margin-top: 5px !important;
+}
+
+.secondary-button:hover {
+  background: rgba(255, 255, 255, 0.18) !important;
+}
+
+/* =========================
+   USER AND ADMIN LOGIN
+========================= */
+
+.user-login-page,
+.admin-login-page {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  background: transparent;
+}
+
+.user-login-card,
+.admin-login-card {
+  width: 380px;
+  max-width: 100%;
+  padding: 35px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+  color: white;
+}
+
+.user-login-card h2,
+.admin-login-card h2 {
+  margin: 0 0 25px;
+  text-align: center;
+  color: white;
+  font-size: 27px;
+}
+
+.user-login-icon,
+.admin-login-icon,
+.admin-icon {
+  text-align: center;
+  font-size: 55px;
+  margin-bottom: 10px;
+  filter: drop-shadow(0 0 15px rgba(130, 100, 255, 0.5));
+}
+
+.user-login-subtitle,
+.admin-login-subtitle,
+.admin-text {
+  margin: 0 0 20px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.user-login-card label,
+.admin-login-card label {
+  display: block;
+  margin: 15px 0 7px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.user-login-card input,
+.admin-login-card input,
+.user-login-card select,
+.admin-login-card select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9px;
+  outline: none;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  font: 14px Arial, sans-serif;
+  transition: 0.3s;
+}
+
+.user-login-card input::placeholder,
+.admin-login-card input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.user-login-card input:focus,
+.admin-login-card input:focus,
+.user-login-card select:focus,
+.admin-login-card select:focus {
+  border-color: #7bdcff;
+  box-shadow: 0 0 15px rgba(80, 210, 255, 0.25);
+}
+
+.user-login-card button,
+.admin-login-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 25px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7145e7, #318fe8);
+  color: white;
+  font: bold 16px Arial, sans-serif;
+  box-shadow: 0 7px 20px rgba(70, 70, 220, 0.3);
+}
+
+.user-login-card button:hover,
+.admin-login-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(70, 100, 240, 0.45);
+}
+
+.user-login-card .signup-text,
+.admin-login-card .signup-text {
+  margin: 20px 0 8px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 14px;
+}
+
+/* =========================
+   BOOK APPOINTMENT
+========================= */
+
+.booking-page {
+  text-align: center;
+  padding: 45px 20px;
+  min-height: 80vh;
+  background: transparent;
+}
+
+.booking-page h2 {
+  color: white;
+  font-size: 30px;
+  margin: 0 0 30px;
+}
+
+.booking-form {
+  width: 350px;
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.booking-form label {
+  display: block;
+  text-align: left;
+  margin: 15px 0 8px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.booking-form input,
+.booking-form select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: #71ddff;
+  box-shadow: 0 0 15px rgba(80, 210, 255, 0.25);
+}
+
+.booking-form select option {
+  background-color: #29205e;
+  color: white;
+}
+
+.booking-form button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7145e7, #318fe8);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.booking-form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(70, 100, 240, 0.35);
+}
+
+/* =========================
+   APPOINTMENTS
+========================= */
+
+.appointment {
+  background: rgba(255, 255, 255, 0.11);
+  width: 400px;
+  max-width: 90%;
+  margin: 15px auto;
+  padding: 22px;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-left: 4px solid #62dfff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.appointment h3 {
+  color: white;
+}
+
+.appointment p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+  display: inline-block;
+  padding: 6px 13px;
+  border-radius: 20px;
+  background: rgba(100, 220, 255, 0.15);
+  border: 1px solid rgba(100, 220, 255, 0.3);
+  color: #79e6ff;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* =====================================================
+   ADMIN MODULE - SAME PURPLE BLUE THEME
+   Do not use a separate light background here.
+===================================================== */
+
+/* Admin dashboard main wrapper */
+
+.admin-page,
+.admin-dashboard {
+  min-height: 85vh;
+  padding: 35px 25px;
+  color: white;
+  background: transparent !important;
+  font-family: Arial, sans-serif;
+}
+
+/* Admin page heading */
+
+.admin-page h1,
+.admin-dashboard h1 {
+  color: white;
+  font-size: 36px;
+  margin-top: 0;
+  text-shadow: 0 0 20px rgba(130, 100, 255, 0.4);
+}
+
+.admin-page > p,
+.admin-dashboard > p {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Admin header */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 24px 28px;
+  margin-bottom: 30px;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 16px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18);
+}
+
+.admin-header h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+  color: white;
+}
+
+.admin-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+/* Admin logout */
+
+.admin-logout-btn {
+  padding: 11px 22px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7145e7, #318fe8);
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(80, 100, 240, 0.35);
+}
+
+/* Admin statistics */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.admin-stat-card {
+  min-width: 0;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.11) !important;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-left: 4px solid #79e6ff;
+  border-radius: 14px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.18);
+  transition: 0.3s;
+}
+
+.admin-stat-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.16) !important;
+  box-shadow: 0 12px 30px rgba(90, 90, 220, 0.22);
+}
+
+.admin-stat-card h3 {
+  margin: 0 0 12px;
+  color: rgba(255, 255, 255, 0.72) !important;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.admin-stat-card h2 {
+  margin: 0;
+  color: #79e6ff !important;
+  font-size: 30px;
+}
+
+/* Admin sections */
+
+.admin-section {
+  padding: 25px;
+  margin-bottom: 25px;
+  color: white;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.admin-section h2 {
+  margin: 0 0 20px;
+  color: white !important;
+  font-size: 22px;
+}
+
+.admin-section p {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Admin action buttons */
+
+.admin-actions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.admin-action-btn {
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #7145e7, #318fe8);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.admin-action-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(80, 100, 240, 0.35);
+}
+
+/* Admin tables */
+
+.admin-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.admin-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  color: white;
+}
+
+.admin-table th {
+  padding: 14px;
+  background: rgba(100, 90, 220, 0.3);
+  color: #a6efff;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.admin-table td {
+  padding: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: 14px;
+}
+
+.admin-table tbody tr {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.09);
+}
+
+/* Admin status labels */
+
+.admin-status {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.admin-status.pending {
+  background: rgba(255, 193, 7, 0.17);
+  border: 1px solid rgba(255, 193, 7, 0.35);
+  color: #ffdc78;
+}
+
+.admin-status.approved {
+  background: rgba(40, 200, 120, 0.15);
+  border: 1px solid rgba(40, 200, 120, 0.35);
+  color: #7ef0b2;
+}
+
+.admin-status.rejected {
+  background: rgba(255, 80, 100, 0.15);
+  border: 1px solid rgba(255, 80, 100, 0.35);
+  color: #ff9eaa;
+}
+
+/* Admin approve and reject */
+
+.admin-approve-btn,
+.admin-reject-btn {
+  padding: 8px 12px;
+  margin: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.admin-approve-btn {
+  background: #168754;
+}
+
+.admin-reject-btn {
+  background: #c93649;
+}
+
+.admin-approve-btn:hover {
+  background: #126b42;
+}
+
+.admin-reject-btn:hover {
+  background: #a92739;
+}
+
+/* Admin login/signup pages */
+
+.admin-auth-page {
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 20px;
+  background: transparent !important;
+}
+
+.admin-auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 35px;
+  color: white;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.3);
+}
+
+.admin-auth-card h2 {
+  margin: 0 0 15px;
+  text-align: center;
+  color: white !important;
+}
+
+.admin-auth-card label {
+  display: block;
+  margin: 15px 0 7px;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.admin-auth-card input,
+.admin-auth-card select {
+  display: block;
+  width: 100%;
+  padding: 13px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 9px;
+  outline: none;
+}
+
+.admin-auth-card input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.admin-auth-card input:focus,
+.admin-auth-card select:focus {
+  border-color: #79e6ff;
+  box-shadow: 0 0 15px rgba(80, 210, 255, 0.2);
+}
+
+.admin-auth-card select option {
+  background: #29205e;
+  color: white;
+}
+
+.admin-auth-card button {
+  width: 100%;
+  padding: 13px;
+  margin-top: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  background: linear-gradient(135deg, #7145e7, #318fe8);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.admin-auth-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(70, 100, 240, 0.35);
+}
+
+.admin-auth-card p {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.admin-auth-card span {
+  color: #79e6ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 900px) {
+  .admin-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .category-container {
+    grid-template-columns: repeat(2, minmax(0, 220px));
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 12px;
+  }
+
+  .navbar h2 {
+    font-size: 23px;
+  }
+
+  .nav-buttons {
+    width: 100%;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .nav-buttons button {
+    padding: 8px 9px;
+    font-size: 12px;
+  }
+
+  .login-user {
+    margin-left: 0;
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  .category-container {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 360px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .category-card {
+    width: 100%;
+  }
+
+  .hero {
+    padding: 40px 15px;
+  }
+
+  .hero h1 {
+    font-size: 29px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .providers-page h2,
+  .booking-page h2 {
+    font-size: 26px;
+  }
+
+  .provider-container {
+    gap: 16px;
+  }
+
+  .provider-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .auth-card,
+  .user-login-card,
+  .admin-login-card,
+  .admin-auth-card {
+    width: 100%;
+    padding: 25px 20px;
+    border-radius: 16px;
+  }
+
+  .auth-page,
+  .user-login-page,
+  .admin-login-page {
+    min-height: 75vh;
+    padding: 25px 15px;
+  }
+
+  .booking-form {
+    width: 100%;
+    padding: 25px 20px;
+  }
+
+  .appointment {
+    width: auto;
+    max-width: 100%;
+    margin: 15px 0;
+  }
+
+  .user-login-card h2,
+  .admin-login-card h2 {
+    font-size: 24px;
+  }
+
+  .user-login-icon,
+  .admin-login-icon {
+    font-size: 48px;
+  }
+
+  /* Admin mobile layout */
+
+  .admin-page,
+  .admin-dashboard {
+    padding: 25px 15px;
+  }
+
+  .admin-header {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-header h1,
+  .admin-page h1,
+  .admin-dashboard h1 {
+    font-size: 25px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .admin-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-section {
+    padding: 18px;
+  }
+
+  .admin-stat-card {
+    padding: 20px;
+  }
+
+  .admin-stat-card h2 {
+    font-size: 26px;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 11px;
+    font-size: 12px;
+  }
+
+  .admin-logout-btn {
+    width: 100%;
+  }
+}
